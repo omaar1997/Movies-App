@@ -10,19 +10,15 @@ export default function App() {
 
   const [data, setData] = useState([])
   const [finalName, setfinalName] = useState('')
-  const [Name, setName] = useState('john')
 
 
-  const receiveMovieName = (movieName) => {
-    setfinalName(movieName)
-    console.log("recieved ", finalName)
+  const receiveMovieName = (search) => {
+    setfinalName(search)
+    console.log("recieved FinalName ", finalName)
   }
 
   useEffect(() => {
-    receiveMovieName()
-    //let api=`http://www.omdbapi.com/?s=${finalName}&apikey=37eedde4`
-    //axios.get('https://www.omdbapi.com/?s=batman&apikey=37eedde4')
-    let api = `http://www.omdbapi.com/?s=${Name}&apikey=37eedde4`
+    let api = `http://www.omdbapi.com/?s=${finalName}&apikey=37eedde4`
     axios.get(api)
       .then(res => {
         setData(res.data.Search)
@@ -30,6 +26,15 @@ export default function App() {
         console.log(err)
       })
   }, [finalName])
+
+  if (!data) {
+    return (
+      <div className="App">
+        <Header />
+        <Search sendMovieName={receiveMovieName} />
+      </div>
+    )
+  }
 
   return (
     <div className="App">

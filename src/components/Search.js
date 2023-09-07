@@ -1,25 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, {useState} from "react";
 import '../css/Search.css';
 import searchIcon from '../icons/searchIcon.png';
-import axios from "axios";
 
 export default function Search(props) {
   const [search, setSearch] = useState('');
   const searchItems = (search) => {
     setSearch(search)
   }
-  const [movieName, setMovieName] = useState('batman');
-  useEffect(() => {
-    props.sendMovieName(movieName)
-    console.log("Send ", movieName)
-  }, [movieName])
-
-
 
   return (
     <div className="search">
       <input type="search" onChange={(e) => searchItems(e.target.value)} className="search-bar" placeholder="Search"></input>
-      <img className="search-icon" src={searchIcon} alt="search icon" onClick={() => { setMovieName(search) }} />
+      <img className="search-icon" src={searchIcon} alt="search icon" onClick={() => { props.sendMovieName(search) }} />
     </div>
   )
 }
