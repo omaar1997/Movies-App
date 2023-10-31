@@ -1,0 +1,44 @@
+.Body{
+    display: flex;
+    margin: 5% 2%;
+}
+.LeftBody{
+    width: 100%;
+}
+.RightBody{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.Button_Group{
+    margin-bottom: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.Button{
+    align-self: center;
+    color: white;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: large;
+    width: 20%;
+    height: 20%;
+}
+.Button:hover{
+    color: cornflowerblue;
+}
+
+.Poster{
+    width: 100%;
+    height: 60vh;
+    border-radius: 20px;
+}
+
+.BodyText{
+    margin: 0% 10%;
+    letter-spacing: 2px;
+    line-height: 30px;
+    font-size: large;
+    font-weight: 400;
+}
