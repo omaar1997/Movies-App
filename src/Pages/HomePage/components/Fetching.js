@@ -14,7 +14,6 @@ export default function Fetching() {
 
     const receiveMovieName = (search) => {
         setfinalName(search)
-        console.log("recieved FinalName ", finalName)
     }
 
     useEffect(() => {
@@ -41,8 +40,8 @@ export default function Fetching() {
             <Header />
             <Search sendMovieName={receiveMovieName} />
             <div className='card-list'>
-                {data.map((card) => {
-                    return <Card title={card.Title} year={card.Year} rating={"7.5/10"} url={card.Poster} />
+                {data.map((card, uniqueId) => {
+                    return <Card key={uniqueId} title={card.Title} year={card.Year} rating={"7.5/10"} url={card.Poster} />
                 })}
             </div>
         </div>
