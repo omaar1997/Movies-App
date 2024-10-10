@@ -8,7 +8,7 @@ export default function Details(props) {
     const [data, setData] = useState([])
     const [text, setText] = useState('')
     useEffect(() => {
-        let api = `http://www.omdbapi.com/?t=batman&plot=full&apikey=37eedde4`
+        let api = `https://www.omdbapi.com/?t=batman&plot=full&apikey=37eedde4`
         axios.get(api)
             .then(res => {
                 setData(res.data)

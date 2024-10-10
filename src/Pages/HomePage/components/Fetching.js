@@ -17,7 +17,7 @@ export default function Fetching() {
     }
 
     useEffect(() => {
-        let api = `http://www.omdbapi.com/?s=${finalName}&apikey=37eedde4`
+        let api = `https://www.omdbapi.com/?s=${finalName}&apikey=37eedde4`
         axios.get(api)
             .then(res => {
                 setData(res.data.Search)
