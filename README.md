@@ -1,2 +1,2 @@
-Vercel is blocking the HTTP Request of the APIs due to security protocols.
-You may test it on local host, it works on a local environment..
+You can test the application through this link:
+https://movies-searchs-app.netlify.app/
